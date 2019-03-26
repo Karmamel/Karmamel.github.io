@@ -2,7 +2,7 @@
 
 
 function setup() {
-	width = 1000;
+	width = 1500;
 	height = 800;
   createCanvas(width, height);
 	p1 = new Player(5, 87, 83, this);
@@ -50,11 +50,11 @@ function collide() {
 }
 
 function collidePlayer() {
-	if (ball.x + ball.width >= p2.x && ball.y > p2.y && ball.y < p2.y + 150) {
+	if (ball.x + ball.width >= p2.x && ball.y > p2.y && ball.y < p2.y + p2.height) {
 	ball.speedX = ball.speedX * -1.2;
 	ball.speedY = ball.speedY * 1.2;
 	}
-	if (ball.x <= p1.x + 20 && ball.y > p1.y && ball.y < p1.y + 150) {
+	if (ball.x <= p1.x + 20 && ball.y > p1.y && ball.y < p1.y + p1.height) {
 	ball.speedX = ball.speedX * -1.2;
 	ball.speedY = ball.speedY * 1.2;
 	}

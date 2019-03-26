@@ -11,7 +11,9 @@ class Player {
 		this.up = up;
 		this.down = down;
     this.movingUp = false;
-    this.movingDown = false;
+		this.movingDown = false;
+		this.width = 20;
+		this.height = context.height/3;
 	}
 	
 	draw() {
@@ -22,7 +24,7 @@ class Player {
     	this.moveDown();
     }
 		
-		rect(this.x, this.y, 20, 150);
+		rect(this.x, this.y, this.width, this.height);
 	}
 	
 	moveUp() {
@@ -33,7 +35,7 @@ class Player {
 	}
 	
 	moveDown(e) {
-		if (this.y + 150 <= this.screenHeight){
+		if (this.y + this.height <= this.screenHeight){
 				this.y+= this.speed;
 		}
 
