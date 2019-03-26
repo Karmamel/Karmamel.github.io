@@ -13,17 +13,11 @@ constructor(){
 }
 	
 	draw(){
-		this.collide();
 		rect(this.x, this.y, this.width, this.height);
 		this.x += this.speedX;
 		this.y += this.speedY;
 	}
 	
-	collide(){
-	if (this.y <= 0 || this.y + this.height >= this.screenHeight) {
-		this.speedY = this.speedY * -1;
-	}
-	}
   
   reset() {
 		this.x = random(50, this.screenWidth-50);

@@ -1,7 +1,12 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #263238;
 }
 canvas {
   display: block;
+}
+
+p {
+  color: white;
 }

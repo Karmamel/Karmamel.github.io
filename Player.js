@@ -1,9 +1,9 @@
 class Player {
 	
 	
-	constructor(x, up, down){
-		this.screenWidth = 800;
-		this.screenHeight = 600;
+	constructor(x, up, down, context){
+		this.screenWidth = context.width;
+		this.screenHeight = context.height;
 		this.x = x;
 		this.y = 50;
 		this.speed = 10;
