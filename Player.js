@@ -6,7 +6,7 @@ class Player {
 		this.screenHeight = context.height;
 		this.x = x;
 		this.y = 50;
-		this.speed = 10;
+		this.speed = 15;
 		
 		this.up = up;
 		this.down = down;
