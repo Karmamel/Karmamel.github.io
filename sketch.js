@@ -8,6 +8,9 @@ function setup() {
 	p1 = new Player(5, 87, 83);
 	p2 = new Player(width-5-20, 38, 40);
 	ball = new Ball();
+  
+  p1Points = 0;
+  p2Points = 0;
 }
 
 function draw() {
@@ -18,6 +21,7 @@ function draw() {
 	}
 	
 	collidePlayer();
+  collideGoal();
 	p1.draw();
 	p2.draw();
 	ball.draw();
@@ -30,6 +34,12 @@ window.onkeydown = (e) => {
 	
 }
 
+window.onkeyup = (e) => {
+	var key = e.keyCode ? e.keyCode : e.which;
+	p1.onkeyup(e);
+	p2.onkeyup(e);
+}
+
 function collidePlayer() {
 	if (ball.x + ball.width >= p2.x && ball.y > p2.y && ball.y < p2.y + 150) {
 	ball.speedX = ball.speedX * -1.2;
@@ -39,4 +49,19 @@ function collidePlayer() {
 	ball.speedX = ball.speedX * -1.2;
 	ball.speedY = ball.speedY * 1.2;
 	}
+}
+  
+function collideGoal() {
+	if (ball.x + ball.width >= this.width) {
+		ball.reset();
+    p1Points++;
+    console.log("Player1:"+p1Points);
+  	console.log("Player2:"+p2Points);
+		} else if (ball.x <= 0) {
+		ball.reset();
+    p2Points++;
+    console.log("Player1:"+p1Points);
+  	console.log("Player2:"+p2Points);
+    }
+  
 }
